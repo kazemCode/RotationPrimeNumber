@@ -8,21 +8,22 @@ public class RotationPrimeNumber {
 		int number = scanner.nextInt();
 		scanner.close();
 		
-		if(isRotationPrime(number)) {
+		if(isRotationPrimeNumber(number)) {
 			System.out.println("Yes");
 		} else {
 			System.out.println("No");
 		}
 	}
 	
-	private static boolean isRotationPrime(int number) {
+	private static boolean isRotationPrimeNumber(int number) {
 		int rotatedNumber = -1;
 		while(number != rotatedNumber) {
-			if (!isPrime(number)) {
+			if (!isPrimeNumber(number)) {
 				return false;
 			}
 			rotatedNumber = rotateNumber(number);
 		}
 		return true;
 	}
+	
 }
