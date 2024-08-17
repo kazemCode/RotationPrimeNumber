@@ -41,4 +41,16 @@ public class RotationPrimeNumber {
 		}
 	}
 	
+	private static int rotateNumber(int number) {
+		int rotatedNumber = 0;
+		int lastNumber = number;
+		
+		while(lastNumber != 0) {
+			rotatedNumber += lastNumber % 10;
+			lastNumber = lastNumber / 10;
+			rotatedNumber *= 10;
+		}
+		
+		return rotatedNumber/10 ;
+	}
 }
