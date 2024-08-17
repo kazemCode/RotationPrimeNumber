@@ -3,7 +3,7 @@ package ir.ac.kntu;
 import java.util.Scanner;
 
 public class RotationPrimeNumber {
-	public class void main(String[] args) {
+	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int number = scanner.nextInt();
 		scanner.close();
@@ -30,16 +30,15 @@ public class RotationPrimeNumber {
 		int counter = 2;
 		if(number < counter) {
 			return false;
-		}
-		
-		while(counter*counter > number) {
-			if(counter == number) {
-				return true;
+		} else {
+			while(counter*counter <= number) {
+				if(number % counter == 0) {
+					return false;
+				}
+				counter++;
 			}
-			if(number % counter) {
-				return false;
-			}
-			counter++;
+			return true;
 		}
 	}
+	
 }
