@@ -26,4 +26,20 @@ public class RotationPrimeNumber {
 		return true;
 	}
 	
+	private static boolean isPrimeNumber(int number) {
+		int counter = 2;
+		if(number < counter) {
+			return false;
+		}
+		
+		while(counter*counter > number) {
+			if(counter == number) {
+				return true;
+			}
+			if(number % counter) {
+				return false;
+			}
+			counter++;
+		}
+	}
 }
