@@ -1,6 +1,7 @@
 package ir.ac.kntu;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 public class RotationPrimeNumber {
 	public static void main(String[] args) {
@@ -17,11 +18,13 @@ public class RotationPrimeNumber {
 	
 	private static boolean isRotationPrimeNumber(int number) {
 		int rotatedNumber = -1;
+		int newNumber = number;
 		while(number != rotatedNumber) {
-			if (!isPrimeNumber(number)) {
+			if (!isPrimeNumber(newNumber)) {
 				return false;
 			}
-			rotatedNumber = rotateNumber(number);
+			rotatedNumber = rotateNumber(newNumber);
+			newNumber = rotatedNumber;
 		}
 		return true;
 	}
@@ -42,15 +45,11 @@ public class RotationPrimeNumber {
 	}
 	
 	private static int rotateNumber(int number) {
-		int rotatedNumber = 0;
-		int lastNumber = number;
+		int rotatedNumber = (number % 10) * (int)Math.pow(10, numberOfDigits(number) - 1);
+		int newNumber = number / 10;
+		rotatedNumber += newNumber;
 		
-		while(lastNumber != 0) {
-			rotatedNumber += lastNumber % 10;
-			lastNumber = lastNumber / 10;
-			rotatedNumber *= 10;
-		}
-		
-		return rotatedNumber/10;
+		return rotatedNumber;
 	}
+	
 }
