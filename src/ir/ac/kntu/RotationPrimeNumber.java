@@ -52,4 +52,14 @@ public class RotationPrimeNumber {
 		return rotatedNumber;
 	}
 	
+	private static int numberOfDigits(int number) {
+		int counter = 0;
+		int newNumber = number;
+
+		while(newNumber != 0) {
+			newNumber = newNumber / 10;
+			counter++;
+		}
+		return counter;
+	}
 }
