@@ -51,6 +51,6 @@ public class RotationPrimeNumber {
 			rotatedNumber *= 10;
 		}
 		
-		return rotatedNumber/10 ;
+		return rotatedNumber/10;
 	}
 }
